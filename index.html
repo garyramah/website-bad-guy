@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BAD-GUY.AI // Autonomous Penetration Testing</title>
+<meta name="description" content="BAD-GUY.AI: autonomous penetration testing, attributable by DNS. Every probe resolves to bad-guy.ai, so the customer always knows who's attacking them. Authorized engagements only.">
+<style>
+  :root{
+    --bg:#0a0a0a; --panel:#101010; --line:#232323;
+    --text:#b5b5b5; --bright:#f2f2f2; --dim:#6f6f6f;
+    --accent:#d4a24e; --accent-dim:#6b5227;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    --mono:"SF Mono",Menlo,Consolas,"Courier New",monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.65;padding:0 1.5rem 3rem}
+  .wrap{max-width:1020px;margin:0 auto}
+  header{border-bottom:1px solid var(--line);padding:1.6rem 0;display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap}
+  .wordmark{font-family:var(--mono);font-size:1.6rem;font-weight:700;letter-spacing:.18em;color:var(--bright)}
+  .wordmark span{color:var(--accent)}
+  .tagline{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-top:.2rem}
+  .badge{font-family:var(--mono);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent-dim);padding:.4rem .7rem;white-space:nowrap}
+  .hero{padding:4.5rem 0 3.5rem;max-width:760px}
+  .eyebrow{font-family:var(--mono);font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:1.2rem}
+  h1{color:var(--bright);font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.1;letter-spacing:-.02em;margin-bottom:1.4rem}
+  .lead{font-size:1.15rem;color:var(--text);max-width:680px}
+  .lead b{color:var(--bright)}
+  h2{color:var(--bright);font-size:1rem;letter-spacing:.14em;text-transform:uppercase;margin:3.5rem 0 1.2rem;padding-bottom:.6rem;border-bottom:1px solid var(--line)}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+  .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+  @media(max-width:760px){.grid3,.grid2{grid-template-columns:1fr}}
+  .card{background:var(--panel);border:1px solid var(--line);padding:1.4rem}
+  .card h3{color:var(--bright);font-size:.95rem;margin-bottom:.5rem}
+  .card p{font-size:.92rem}
+  .step{display:flex;gap:1rem;background:var(--panel);border:1px solid var(--line);padding:1.4rem;margin-bottom:1rem}
+  .num{font-family:var(--mono);color:var(--accent);font-size:1.1rem;flex-shrink:0}
+  .step h3{color:var(--bright);font-size:.95rem;margin-bottom:.3rem}
+  .step p{font-size:.92rem}
+  .nolist{list-style:none}
+  .nolist li{padding:.7rem 0 .7rem 1.6rem;position:relative;border-bottom:1px solid var(--line);font-size:.95rem}
+  .nolist li::before{content:"—";position:absolute;left:0;color:var(--accent)}
+  .nolist li b{color:var(--bright)}
+  .terminal{background:#000;border:1px solid var(--line);padding:1.1rem;font-family:var(--mono);font-size:.82rem;line-height:1.7;color:#9be09b;overflow-x:auto}
+  .terminal .sys{color:var(--accent)}
+  .terminal .gate{color:#f2f2f2}
+  .note{font-size:.85rem;color:var(--dim);margin-top:.8rem}
+  footer{margin-top:4rem;border-top:1px solid var(--line);padding-top:1.2rem;font-family:var(--mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div>
+      <div class="wordmark">BAD-GUY<span>.AI</span></div>
+      <div class="tagline">Autonomous penetration testing · Attributable by DNS</div>
+    </div>
+    <div class="badge">Authorized testing only</div>
+  </header>
+
+  <section class="hero">
+    <p class="eyebrow">The adversary you can identify</p>
+    <h1>Know who&rsquo;s attacking you.</h1>
+    <p class="lead">Every probe we send originates from infrastructure that resolves to <b>bad-guy.ai</b>. Check your own logs: if it resolves to bad-guy.ai, it&rsquo;s us, working under your written scope. If it doesn&rsquo;t, it&rsquo;s not us — treat it as a real threat. That&rsquo;s the point: authorized offense should be identifiable offense. And we go where real attackers go — the administrative software around your flagship systems, where authority quietly composes.</p>
+  </section>
+
+  <h2>Attribution by design</h2>
+  <div class="grid3">
+    <div class="card">
+      <h3>Reverse DNS under bad-guy.ai</h3>
+      <p>All agent traffic egresses from infrastructure with reverse DNS under bad-guy.ai — forward-confirmed, so the name and the address agree. The attacker has a name, and it is ours.</p>
+    </div>
+    <div class="card">
+      <h3>Verifiable in your logs</h3>
+      <p>No trust required. Your SIEM, firewall, and proxy logs show the name. One rule — source resolving to *.bad-guy.ai — and authorized test traffic separates itself from real threats.</p>
+    </div>
+    <div class="card">
+      <h3>If it&rsquo;s not us, it&rsquo;s real</h3>
+      <p>Anything that looks like an attack but doesn&rsquo;t resolve to bad-guy.ai is not our engagement. That distinction is the whole product: signal without noise during the test window.</p>
+    </div>
+  </div>
+
+  <h2>The seam is the surface</h2>
+  <div class="grid3">
+    <div class="card">
+      <h3>Admin software is the vector</h3>
+      <p>The most sensitive internal material often lives outside the core product — in the ordinary business tools every company shares. A frontier model can be perfectly guarded while the software around it is not.</p>
+    </div>
+    <div class="card">
+      <h3>Agents compose authority</h3>
+      <p>An agent does not need a single powerful credential. It needs a path: one reachable affordance after another, each legitimate on its own, until the combination is not. That is the attack to test for.</p>
+    </div>
+    <div class="card">
+      <h3>Annual testing can&rsquo;t keep up</h3>
+      <p>Point-in-time assessments go stale the week a new integration ships. Agent-driven testing re-runs as the environment changes, so the map stays current with the system it describes.</p>
+    </div>
+  </div>
+
+  <h2>How an engagement runs</h2>
+  <div class="step">
+    <div class="num">01</div>
+    <div>
+      <h3>Scope, in writing</h3>
+      <p>Written authorization first. Rules of engagement, target systems, and off-limits systems are named in advance. Anything outside the signed scope is not tested.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="num">02</div>
+    <div>
+      <h3>Map</h3>
+      <p>Autonomous agents enumerate reachable affordances across administrative software and integrations, and chain them into candidate paths — the same composition an adversary would attempt.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="num">03</div>
+    <div>
+      <h3>Validate, with a human gate</h3>
+      <p>Paths are proven by execution, not theorized. Any consequential action pauses for human review before it proceeds. The agent proposes; a person disposes.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="num">04</div>
+    <div>
+      <h3>Disclose, completely</h3>
+      <p>Full findings with a complete activity ledger: every path attempted, every system touched, every action taken, every source resolving to bad-guy.ai. Partial disclosure is a failed engagement — the client must be able to reconstruct everything we did.</p>
+    </div>
+  </div>
+
+  <h2>Capabilities</h2>
+  <div class="grid2">
+    <div class="card">
+      <h3>Agentic path mapping</h3>
+      <p>Multi-step attack paths through third-party administrative software — the seams between systems, not just the systems themselves.</p>
+    </div>
+    <div class="card">
+      <h3>Internal AI environment testing</h3>
+      <p>Testing of deployed AI systems and the data agents can reach through them: tool permissions, retrieval paths, and cross-system access.</p>
+    </div>
+    <div class="card">
+      <h3>Continuous validation</h3>
+      <p>Re-testing on change, not on calendar. When integrations, permissions, or vendors change, the map updates with them.</p>
+    </div>
+    <div class="card">
+      <h3>Disclosure &amp; remediation ledger</h3>
+      <p>Every engagement closes with a reconstructable record and prioritized fixes, so the next test starts from a stronger baseline.</p>
+    </div>
+  </div>
+
+  <h2>What we will not do</h2>
+  <ul class="nolist">
+    <li><b>No unattributable traffic.</b> If you can&rsquo;t identify it as us in your own logs, we don&rsquo;t send it.</li>
+    <li><b>No testing without written authorization.</b> No exceptions, no implied permission.</li>
+    <li><b>No scope creep.</b> If it is not in the signed rules of engagement, it is not touched.</li>
+    <li><b>No partial disclosure.</b> The client sees everything we did, including what failed.</li>
+    <li><b>No data retention beyond the engagement.</b> Findings stay with the client; access ends when the engagement ends.</li>
+  </ul>
+
+  <h2>Illustrative engagement log</h2>
+  <div class="terminal">
+    <p><span class="sys">[SCOPE]</span> Written authorization verified. Targets: admin cluster A–C. Off-limits: customer data stores, production models.</p>
+    <p><span class="sys">[ATTRIBUTION]</span> Egress reverses to agent-07.bad-guy.ai — verifiable in client SIEM.</p>
+    <p>[MAP] Enumerating reachable affordances across 3 admin integrations… 41 candidate paths found.</p>
+    <p>[MAP] Path 07 chains helpdesk token → directory read → shared drive listing.</p>
+    <p><span class="gate">[GATE] Human review required before validating Path 07. Awaiting approval… APPROVED.</span></p>
+    <p>[VALIDATE] Path 07 confirmed: read access to internal meeting archive via admin integration.</p>
+    <p>[VALIDATE] Path 07 does not reach customer data stores. Boundary holds.</p>
+    <p><span class="sys">[DISCLOSE]</span> Full activity ledger written. 41 paths mapped, 1 confirmed, 40 closed.</p>
+    <p><span class="sys">[ATTRIBUTION]</span> All session sources resolve to *.bad-guy.ai. No other infrastructure used. Session footprint cleared.</p>
+  </div>
+  <p class="note">Illustrative output from a simulated engagement — not a live test, not a client result.</p>
+
+  <footer>
+    <span>BAD-GUY.AI — Autonomous penetration testing</span>
+    <span>Written scope · Attributable by DNS · Full disclosure</span>
+  </footer>
+
+</div>
+</body>
+</html>
